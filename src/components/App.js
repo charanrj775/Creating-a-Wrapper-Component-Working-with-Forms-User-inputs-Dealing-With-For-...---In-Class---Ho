@@ -34,15 +34,24 @@ class App extends Component {
     { name: 'Mussoorie', country: 'India' },
     { name: 'Mount Abu', country: 'India' },
     { name: 'Tirupati', country: 'India' },
-    ]
+    ];
+    this.filcontrylist=this.cityList.filter((item)=> {
+      return item.country=== "India";
+    });
   }
 
   render() {
     return (
       <div id="main">
         {/* Do not remove the main div */}
+    <ol>
+      {this.filcontrylist && this.filcontrylist.map((item,index) => (
+        <li key = {`location ${index+}`}>{item.name}</li>
+        )) }
+    </ol>
       </div>
-    )
+
+    );
   }
 }
 
